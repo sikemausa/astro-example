@@ -1,6 +1,6 @@
 ---
 import Singleton from '../../../data/getPaths.js';
-import PokemonImage from '../../../components/PokemonImage.astro';
+import PokemonCard from '../../../components/PokemonCard.astro';
 
 export async function getStaticPaths() {
   const paths =  await Singleton.getInstance();
@@ -14,13 +14,13 @@ const pokemon = Astro.props;
   <head>
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width">
-      <!-- <title>{title}</title> -->
       <link rel="icon" type="image/svg+xml" href="/favicon.svg">
       <link rel="stylesheet" type="text/css" href="/style/global.css">
       <link rel="stylesheet" type="text/css" href="/style/home.css">
   </head>
   <body>
-    <h1>{name}</h1>
-    <PokemonImage imageUrl={pokemon.sprites.front_default} />
+    <div>
+      <PokemonCard imageUrl={pokemon.sprites.front_default} name={name} types={pokemon.types} baseExperience={pokemon.base_experience} />
+    </div>
   </body>
 </html>
