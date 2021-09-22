@@ -7,7 +7,7 @@ export async function getStaticPaths() {
   return paths;
 };
 
-const { name, lang } = Astro.request.params;
+const { name } = Astro.request.params;
 const pokemon = Astro.props;
 ---
 <html>
@@ -15,7 +15,6 @@ const pokemon = Astro.props;
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width">
       <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-      <link rel="stylesheet" type="text/css" href="/style/global.css">
       <link rel="stylesheet" type="text/css" href="/style/home.css">
   </head>
   <body>
