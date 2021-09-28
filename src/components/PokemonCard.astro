@@ -2,17 +2,17 @@
 const { imageUrl, types, baseExperience, name } = Astro.props;
 ---
 <div>
-  <div>
-    <div>
-      <img src={imageUrl}>
+  <div class="max-w-md py-4 px-8 bg-white shadow-lg rounded-lg my-20 flex flex-col mx-auto">
+    <div class="flex justify-center md:justify-end -mt-16">
+      <img class="w-20 h-20 object-cover rounded-full border-2 border-indigo-500" src={imageUrl}>
     </div>
     <div>
-      <h2>{name}</h2>
-      <p>Base Experience: {baseExperience}</p>
+      <h2 class="text-gray-800 text-3xl font-semibold">{name}</h2>
+      <p class="mt-2 text-gray-600">Base Experience: {baseExperience}</p>
     </div>
-    <ul>
+    <ul class="flex justify-end mt-4">
       {
-        types.map((slot, index) => (<li><a href={slot.type.url}>{slot.type.name}{index === 0 && '-'}</a></li>))
+        types.map((slot, index) => (<li class="text-xl font-medium text-indigo-500"><a href={slot.type.url}>{slot.type.name}{index === 0 && '-'}</a></li>))
       }
     </ul>
   </div>

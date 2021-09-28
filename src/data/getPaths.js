@@ -6,13 +6,12 @@ var Singleton = (function () {
     const { results } = await response.json();
     const data = await fetch(results[0].url);
     const dataJson = await data.json();
-    const pages = [];
-    results.forEach(result => {
-      for (let i = 0; i < 10; i++) {
-        pages.push({
+    return results.reduce((acc, curr) => {
+      acc.push(
+        {
           params: {
             lang: "es",
-            name: result.name + i,
+            name: curr.name,
           },
           props: {
             ...dataJson
@@ -21,15 +20,15 @@ var Singleton = (function () {
         {
           params: {
             lang: "en",
-            name: result.name + i,
+            name: curr.name,
           },
           props: {
             ...dataJson
           }
-        })
-      }
-    });
-    return pages;
+        }
+      );
+      return acc;
+    }, []);
   }
 
   return {
