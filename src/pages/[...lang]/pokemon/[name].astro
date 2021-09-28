@@ -1,6 +1,7 @@
 ---
 import Singleton from '../../../data/getPaths.js';
 import PokemonCard from '../../../components/PokemonCard.astro';
+import TestComponent from '../../../components/TestComponent.svelte';
 
 export async function getStaticPaths() {
   const paths =  await Singleton.getInstance();
@@ -19,8 +20,8 @@ const pokemon = Astro.props;
       <link rel="stylesheet" type="text/css" href="/style/home.css">
   </head>
   <body>
-    <div>
-      <PokemonCard imageUrl={pokemon.sprites.front_default} name={name} types={pokemon.types} baseExperience={pokemon.base_experience} />
-    </div>
+    <h1>{name}</h1>
+    <PokemonCard imageUrl={pokemon.sprites.front_default} name={name} types={pokemon.types} baseExperience={pokemon.base_experience} />
+    <TestComponent imageUrl={pokemon.sprites.front_default} />
   </body>
 </html>
