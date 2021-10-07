@@ -1,6 +1,5 @@
 ---
 // Component Imports
-import Tour from '../components/Tour.astro';
 // You can import components from any supported Framework here!
 
 
@@ -19,11 +18,6 @@ let title = 'My Astro Site';
     <meta name="viewport" content="width=device-width">
     <title>{title}</title>
 
-        <link rel="icon" type="image/x-icon" href="/favicon.ico" />
-    
-    <link rel="stylesheet" href="/style/global.css">
-    <link rel="stylesheet" href="/style/home.css">
-
     <style>
         header {
             display: flex;
@@ -37,13 +31,10 @@ let title = 'My Astro Site';
     <main>
         <header>
             <div>
-                <img width="60" height="80" src="/assets/logo.svg" alt="Astro logo">
                 <h1>Welcome to <a href="https://astro.build/">Astro</a></h1>
             </div>
         </header>
-
-        <Tour />
-
+        <h1>Main</h1>
         <!--
            - You can also use imported framework components directly in your markup!
            -
