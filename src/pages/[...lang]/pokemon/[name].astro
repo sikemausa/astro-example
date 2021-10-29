@@ -1,8 +1,10 @@
 ---
 import Singleton from '../../../data/getPaths.js';
 import PokemonCard from '../../../components/PokemonCard.astro';
-import TestComponent from '../../../components/TestComponent.svelte';
-
+import Pokemon from '../../../components/Pokemon.svelte';
+import Pokemon1 from '../../../components/Pokemon1.svelte';
+import Pokemon2 from '../../../components/Pokemon2.svelte';
+import Pokemon3 from '../../../components/Pokemon3.svelte';
 export async function getStaticPaths() {
   const paths =  await Singleton.getInstance();
   return paths;
@@ -22,6 +24,9 @@ const pokemon = Astro.props;
   <body>
     <h1>{name}</h1>
     <PokemonCard imageUrl={pokemon.sprites.front_default} name={name} types={pokemon.types} baseExperience={pokemon.base_experience} />
-    <TestComponent imageUrl={pokemon.sprites.front_default} />
+    <Pokemon imageUrl={pokemon.sprites.front_default} name={name} types={pokemon.types} baseExperience={pokemon.base_experience} />
+    <Pokemon1 imageUrl={pokemon.sprites.front_default} name={name} types={pokemon.types} baseExperience={pokemon.base_experience} />
+    <Pokemon2 imageUrl={pokemon.sprites.front_default} name={name} types={pokemon.types} baseExperience={pokemon.base_experience} />
+    <Pokemon3 imageUrl={pokemon.sprites.front_default} name={name} types={pokemon.types} baseExperience={pokemon.base_experience} />
   </body>
 </html>
